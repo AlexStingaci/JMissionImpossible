@@ -1,0 +1,3 @@
+Gli ascensori vengono gestiti come mappe separate che vengono caricate solo quando si esce dal livello. Prendere dunque gli sprite dell'ascensore e delle mura e pavimenti
+
+Come sapere quale livello devo caricare?
