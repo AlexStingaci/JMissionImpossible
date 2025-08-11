@@ -7,7 +7,7 @@ public class Game implements Runnable {
     private Thread gameThread;
     private final GamePanel gamePanel;
     private final GameWindow gameWindow;
-    private final int FPS = 120; // cambia qui il target
+    private final int FPS = 60; // cambia qui il target
 
     public Game() {
         gamePanel = new GamePanel();
@@ -31,20 +31,19 @@ public class Game implements Runnable {
         long lastFrame = System.nanoTime();
 
         long now = System.nanoTime();
-        int paintsThisSecond = 0;
-        long lastFpsTs = 0;
+        
+        long lastFpsTs = System.currentTimeMillis();
         while (true) {
         	now = System.nanoTime();
             if(now - lastFrame >= timePerFrame) {
             	gamePanel.repaint();
             	lastFrame = now;
-            	paintsThisSecond++;
+            	
             }
  
 		   
-		    if (System.currentTimeMillis() - lastFpsTs >= 1_000_000_000L) {
-		        System.out.println("Render FPS: " + paintsThisSecond);
-		        paintsThisSecond = 0;
+		    if (System.currentTimeMillis() - lastFpsTs >= 1000) {
+		        
 		        lastFpsTs =System.currentTimeMillis();
 		    }
         }

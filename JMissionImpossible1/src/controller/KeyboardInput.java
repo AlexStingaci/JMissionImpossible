@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import view.GamePanel;
-
+import static utilities.Costants.Directions.*;
 public class KeyboardInput implements KeyListener{
 	private GamePanel gamePanel;
 	public KeyboardInput(GamePanel gamePanel) {
@@ -18,7 +18,18 @@ public class KeyboardInput implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+		switch(e.getKeyCode()) {
+		case KeyEvent.VK_W:
+			break;
+		case KeyEvent.VK_A:
+			gamePanel.setDirection(LEFT);
+			break;
+		case KeyEvent.VK_S:
+			break;
+		case KeyEvent.VK_D:
+			gamePanel.setDirection(RIGHT);
+			break;
+		}
 		
 	}
 
@@ -27,16 +38,14 @@ public class KeyboardInput implements KeyListener{
 		
 		switch(e.getKeyCode()) {
 		case KeyEvent.VK_W:
-			gamePanel.changeY(-5);
 			break;
 		case KeyEvent.VK_A:
-			gamePanel.changeX(-5);
+			gamePanel.setMoving(false);
 			break;
 		case KeyEvent.VK_S:
-			gamePanel.changeY(+5);
 			break;
 		case KeyEvent.VK_D:
-			gamePanel.changeX(+5);
+			gamePanel.setMoving(false);
 			break;
 		}
 		
