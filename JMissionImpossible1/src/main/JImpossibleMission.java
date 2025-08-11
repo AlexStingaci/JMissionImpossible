@@ -1,14 +1,12 @@
 package main;
 
-import view.GamePanel;
-import view.GameWindow;
+import controller.Game;
 
-public class JImpossibleMission {
-	
+
+public class JImpossibleMission{
+
 	public static void main(String[] args) {
-		GamePanel gamePanel = new GamePanel();
-		GameWindow gameWindow = new GameWindow(gamePanel);
-
+		new Game();
 	}
 
 }
