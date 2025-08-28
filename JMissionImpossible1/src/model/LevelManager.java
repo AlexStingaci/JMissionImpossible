@@ -54,7 +54,7 @@ public class LevelManager {
 				int index = levelOne.getSpriteIndex(i,j);
 				if(index!=0) {
 					try {
-						Optional<String[]> res = cercaValori("C:\\Users\\Alex\\git\\JMissionImpossible\\JMissionImpossible1\\res\\levels\\level1.txt", index);
+						Optional<String[]> res = cercaValori("./res/levels/level1.txt", index);
 						String[] values = res.get();
 						if(values[0].equals("8")) {
 							g.drawImage(levelImg[Integer.parseInt(values[0])][Integer.parseInt(values[1])], Game.Tiles_Final_Size*i, Game.Tiles_Final_Size*j,Game.Tiles_Final_Size,Game.Tiles_Final_Size,null);
